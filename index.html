@@ -3,16 +3,19 @@
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
   </head>
   <body>
+    <h1>Welcome to Benwilliamson.org</h1>
+    <div id="viewer">
+    </div>
   </body>
-  
+
   <script>
     var converter = new showdown.Converter();
-        
+
     fetch("Hardware and Software.md")
         .then(response => response.text())
         .then((response) => {
           html = converter.makeHtml(response);
-          document.body.innerHTML += html;
+          document.getElementById("viewer").innerHTML = html;
         })
         .catch(err => console.log(err));
   </script>
