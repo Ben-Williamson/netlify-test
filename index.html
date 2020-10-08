@@ -11,7 +11,7 @@
     fetch("Hardware and Software.md")
         .then(response => response.text())
         .then((response) => {
-          html      = converter.makeHtml("hi");
+          html = converter.makeHtml(response);
           document.body.innerHTML = html;
         })
         .catch(err => console.log(err));
