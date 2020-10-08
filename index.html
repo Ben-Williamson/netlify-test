@@ -24,7 +24,7 @@
     </style>
   </head>
   <body>
-    <textarea id="input"></textarea>
+    <textarea id="input"># Welcome to `benwilliamson.org`</textarea>
     <div id="viewer"></div>
   </body>
 
@@ -43,10 +43,13 @@
         })
         .catch(err => console.log(err));
     }
-
-    $('#input').on('input', function (event) {
+    else {
+      $('#input').on('input', function (event) {
+        html = converter.makeHtml($("#input").val());
+        document.getElementById("viewer").innerHTML = html;
+      });
       html = converter.makeHtml($("#input").val());
       document.getElementById("viewer").innerHTML = html;
-    });
+    }
   </script>
 </html>
