@@ -1,11 +1,31 @@
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #input {
+        width: 50%;
+        height: 100%;
+        float: left;
+      }
+
+      #viewer {
+        width: 50%;
+        height: 100%;
+        float: right;
+        border-style: solid;
+        margin: -4px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to Benwilliamson.org</h1>
-    <div id="viewer">
-    </div>
+    <textarea id="input"></textarea>
+    <div id="viewer"></div>
   </body>
 
   <script>
@@ -14,12 +34,19 @@
 
     var converter = new showdown.Converter();
 
-    fetch(urlParams.get('file'))
+    if(urlParams.has("file")) {
+      fetch(urlParams.get('file'))
         .then(response => response.text())
         .then((response) => {
           html = converter.makeHtml(response);
           document.getElementById("viewer").innerHTML = html;
         })
         .catch(err => console.log(err));
+    }
+
+    $('#input').on('input', function (event) {
+      html = converter.makeHtml($("#input").val());
+      document.getElementById("viewer").innerHTML = html;
+    });
   </script>
 </html>
