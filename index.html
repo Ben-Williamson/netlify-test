@@ -9,9 +9,12 @@
   </body>
 
   <script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+
     var converter = new showdown.Converter();
 
-    fetch("Hardware and Software.md")
+    fetch(urlParams.get('file'))
         .then(response => response.text())
         .then((response) => {
           html = converter.makeHtml(response);
