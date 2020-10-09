@@ -2,11 +2,17 @@
   <head>
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <textarea id="input"># Welcome to `benwilliamson.org`</textarea>
-    <div id="viewer"></div>
+    <div id="sidebar">
+    </div>
+    <div id="main">
+    </div>
+
+    <!-- <textarea id="input"># Welcome to `benwilliamson.org`</textarea> -->
+    <!-- <div id="viewer"></div> -->
   </body>
 
   <script>
@@ -20,7 +26,7 @@
         .then(response => response.text())
         .then((response) => {
           html = converter.makeHtml(response);
-          document.getElementById("viewer").innerHTML = html;
+          document.getElementById("main").innerHTML = html;
         })
         .catch(err => console.log(err));
     }
