@@ -22,6 +22,7 @@ h1 {
 #main {
   grid-area: "main";
   padding-left: 4vw;
+  padding-right: 4vw;
 }
 
 
