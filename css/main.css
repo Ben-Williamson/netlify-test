@@ -8,7 +8,7 @@ body {
   grid-template-columns: max(20vw, 300px) auto;
   grid-template-rows: "100vh";
   font-family: 'Lato', sans-serif;
-  font-size: 110%;
+  font-size: max(1vw, 15px);
   color: #1a1a1a;
 }
 
@@ -21,11 +21,10 @@ body {
   width: 3vw;
 }
 
-#sidebar h3 {
+#sidebar h4 {
   color: #ababab;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 0.75vw;
   margin-bottom: 0vw;
   display:  inline-block;
   border-radius: 7.5px;
@@ -39,7 +38,7 @@ body {
   letter-spacing: 1.4px;
 }
 
-#sidebar h3:hover {
+#sidebar h4:hover {
   border-color: #0fe3ff;
   color: #6142D2;
 }
@@ -62,7 +61,7 @@ body {
   padding-left: 4vw;
   padding-right: 4vw;
   color: #1a1a1a;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 
