@@ -2,11 +2,16 @@
   <head>
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div id="sidebar">
+      <h1>Welcome<br> to your notes!</h1>
+
+      <h3>Instructions</h3>
+      <h3 class="selected">Hardware and Software</h3>
+      <h3>Classification of Programing Lanugages</h3>
     </div>
     <div id="main">
     </div>
@@ -31,6 +36,37 @@
         .catch(err => console.log(err));
     }
     else {
+//       md = `# Hardware and Software
+
+// **Hardware** - The physical parts of a computer.
+// **Software** - The programs running on a computer.
+
+// #### Software can be split into System Software and Application Software:
+// - ***System Software*** -  Fundamental software responsible for managing hardware and providing components to applications, e.g. translators. 
+// - ***Application Software*** - Software designed to perform specific tasks which the user interacts with directly.
+
+// #### Aplication Software is then catagorised as:
+// - ***General Purpose*** - Software which is designed to be widely used without a particular use case in mind. E.g. Word Processing, Web Browsing.
+// - ***Specialist Software*** – Designed for a particular use case, developed for a particular business or scientific area.  E.g. Air Traffic Control Software, SIMS for Schools.
+// - ***Bespoke Software*** – Designed for a specific client, this software is expensive but meets the specific needs of an organisation. This may be required when the software is unlike anything that already exist. E.g. NHS Track and Trace.
+
+// #### Translators:
+// - ***Interpreter*** - Convert high level languages into machine code one instruction at a time on-the-fly while the program runs.	 Good for debugging code as you can see where the program crashed, but much slower.
+// - ***Compiler*** – Converts high level code into machine code before the program starts, this machine code is then stored and the source is no-longer needed.  This prevents proprietary code from being edited.
+// - ***Assembler*** – Convert assembly code to machine code, there is a one to one correspondence between assembly instructions and machine code instructions.
+
+// ***Libraries*** – Collection of prewritten code that can be used in software projects.  This speeds up the development process.
+
+// #### Common Utility Programs:
+// - Backup and Restore
+// - Anti-Virus
+// - Firewall
+// - Compiler`;
+
+//       html = converter.makeHtml(md);
+//       document.getElementById("main").innerHTML = html;
+
+
       $('#input').on('input', function (event) {
         html = converter.makeHtml($("#input").val());
         document.getElementById("viewer").innerHTML = html;
